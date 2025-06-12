@@ -12,6 +12,8 @@ try:
         #bot.select_adults(1)
         bot.select_search()
         bot.apply_filtrations()
+        bot.refresh() # A workaround to let our bot to grab the data properly
+        bot.report_results()
         input("Wait")
 
 except Exception as e:

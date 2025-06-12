@@ -1,14 +1,18 @@
 import os
 import time
 import booking.constants as const
+
 from selenium import webdriver
+from booking.booking_filtrations import BookingFiltration
+from booking.booking_report import BookingReport
+
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys 
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from datetime import datetime
 from selenium.common.exceptions import NoSuchElementException
-from booking.booking_filtrations import BookingFiltration
+
 
 class Booking(webdriver.Chrome) :
     def __init__(self, driver_path = r"D:\SeleniumDrivers\chromedriver-win64", teardown = False) :
@@ -199,6 +203,14 @@ class Booking(webdriver.Chrome) :
         filtration.apply_star_rating(4, 5)
 
         filtration.sort_price_lowest_first()
+        
+    def report_results(self):
+        hotel_boxes = self.find_element_by_id(
+            'hotellist_inner'
+        )
+
+        report = BookingReport(hotel_boxes)
+        report.pull_titles()
         
     
     
