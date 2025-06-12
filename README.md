@@ -67,17 +67,15 @@ Here is a sample output from a typical run:
 
 ## 📄 Requirements
 
-Make sure you have **Python** installed on your system. This project uses the following Python package:
+Make sure you have **Python** installed on your system. This project uses the following Python packages:
 
 - `selenium`
 - `prettytable`
 
-Install it using:
+Install them using these commands:
 
-```bash
-pip install selenium
-pip install prettytable
----
+- pip install selenium
+- pip install prettytable
 
 ## 🚀 How to Use
 
