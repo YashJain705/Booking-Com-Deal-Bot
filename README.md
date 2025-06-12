@@ -65,6 +65,20 @@ Here is a sample output from a typical run:
 
 ---
 
+## 📄 Requirements
+
+Make sure you have **Python** installed on your system. This project uses the following Python package:
+
+- `selenium`
+- `prettytable`
+
+Install it using:
+
+```bash
+pip install selenium
+pip install prettytable
+---
+
 ## 🚀 How to Use
 
 1. **Clone the repository:**
