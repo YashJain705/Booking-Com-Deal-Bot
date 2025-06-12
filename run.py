@@ -5,11 +5,11 @@ try:
     with Booking() as bot:
         bot.land_first_page()
         bot.select_currency(currency='INR')
-        bot.select_place_to_go('Jaipur')
-        time.sleep(2) #time for the calendar to load in
-        bot.select_dates(check_in_date='2025-06-19',
-                         check_out_date='2025-06-25')
-        #bot.select_adults(1)
+        bot.select_place_to_go(input("Where you want to go ?"))
+        time.sleep(2) #time for the calendar to load in        
+        bot.select_dates(check_in_date=input("What is the check in date ?"),
+                         check_out_date=input("What is the check out date ?"))
+        # bot.select_travellers(int(input("How many people ?")))
         bot.select_search()
         bot.apply_filtrations()
         bot.refresh() # A workaround to let our bot to grab the data properly

@@ -12,6 +12,7 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from datetime import datetime
 from selenium.common.exceptions import NoSuchElementException
+from prettytable import PrettyTable
 
 
 class Booking(webdriver.Chrome) :
@@ -210,7 +211,11 @@ class Booking(webdriver.Chrome) :
         )
 
         report = BookingReport(hotel_boxes)
-        report.pull_titles()
+        table = PrettyTable(
+            field_names=["Hotel Name", "Hotel Price", "Hotel Score"]
+        )
+        table.add_rows(report.pull_deal_box_attributes())
+        print(table)
         
     
     
